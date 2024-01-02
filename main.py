@@ -11,8 +11,8 @@ def get_weather_site_html(url):
 
 def get_temperature(soup) -> str:
     bs4_element = soup.find('span', {'class': "air-temp"})
-    temperature = str(bs4_element)
-    return temperature[-11:-7].strip()
+    temperature = str(bs4_element.text)
+    return temperature.strip()
 
 
 def main():
